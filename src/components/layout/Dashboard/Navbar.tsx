@@ -80,12 +80,11 @@ export default function Navbar({
                 width: {
                   sm: 300,
                   md: 400,
-                  lg: 500
+                  lg: 600
                 }
               }}
               size="small"
               variant="outlined"
-              label='wtf'
               placeholder="Search For Some Thing"
               InputProps={{
                 startAdornment: (

@@ -22,14 +22,15 @@ export default function DashboardNavLinks(props: Props) {
                     px: 2,
                     borderRadius: "0.5rem",
                     minHeight:45,
-                    transition:'0.3s ease-in ',
+                    transition:'0.2s',
                     color: isActive ? "white" : palette.text.primary,
                     ":hover":{
                       background:'transparent',
                       color:palette.primary.main,
                     },
                     "&.Mui-selected , &.Mui-selected:hover": {
-                      backgroundColor: 'transparent',
+                      backgroundColor:palette.background.default,
+                      // backgroundColor: 'transparent',
                       color:palette.primary.main,
                       "::after":({palette})=>({
                         content:"''",

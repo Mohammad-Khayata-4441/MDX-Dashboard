@@ -1,7 +1,7 @@
  
 import {HiOutlineHome, HiOutlineShoppingCart, HiOutlineUsers } from 'react-icons/hi2'
 import {IoExtensionPuzzleOutline, IoFolderOpenOutline,IoNotificationsOutline } from 'react-icons/io5'
- 
+
 export default [
     {
         text: "Home",
@@ -19,7 +19,7 @@ export default [
         icon: HiOutlineShoppingCart 
     },
     {
-        text: "File Manager",
+        text: "File",
         path: "/fileManager",
         icon: IoFolderOpenOutline 
     },

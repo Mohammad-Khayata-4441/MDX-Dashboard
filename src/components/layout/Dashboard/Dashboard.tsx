@@ -5,8 +5,9 @@ import MuiDrawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import DashboardNavLinks from "./DashboardNavLinks";
-import {  CssBaseline, Typography } from "@mui/material";
+import { CssBaseline, Typography } from "@mui/material";
 import Navbar from "./Navbar";
+import BottomNavigation from "./BottomNavigation";
 import { BsChevronCompactLeft } from 'react-icons/bs'
 
 const drawerFullWidth = 240;
@@ -25,7 +26,7 @@ const openedMixin = (theme: Theme, drawerWidth: number): CSSObject => ({
   overflowX: "hidden",
 });
 
-const closedMixin = (theme: Theme ): CSSObject => ({
+const closedMixin = (theme: Theme): CSSObject => ({
   transition: theme.transitions.create("width", {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen,
@@ -76,12 +77,19 @@ export default function MiniDrawer(props: any) {
   };
 
   return (
-    <Box sx={{ display: "flex", transition: '0.3s', flexDirection: 'column', width: `calc(100% - ${drawerWidth}px)`, ml: drawerWidth + 'px' }}>
+    <Box sx={{ display: "flex", transition: '0.3s', flexDirection: 'column', width: { xs: '100%', md: `calc(100% - ${drawerWidth}px)` }, ml: { xs: 0, md: drawerWidth + 'px' } }}>
       <CssBaseline />
 
       <Navbar drawerOpen={open} drawerWidth={drawerWidth} onOpen={handleDrawerOpen} />
 
-      <Drawer variant="permanent" open={open} drawerWidth={drawerWidth} PaperProps={{ elevation: 0, variant: 'elevation', sx: { border: 'none' } }}>
+      <Drawer variant="permanent" open={open} drawerWidth={drawerWidth} PaperProps={{
+        elevation: 1, variant: 'elevation', sx: {
+          border: 'none', display: {
+            xs: 'none',
+            md: 'block'
+          }
+        }
+      }}>
         <DrawerHeader  >
           <Box
             display={"flex"}
@@ -118,12 +126,10 @@ export default function MiniDrawer(props: any) {
         </Box>
       </Drawer>
 
-      <Box component="main" sx={{ flexGrow: 1, position: "relative", p: '24px' }}>
-
-
-
+      <Box component="main" sx={{ flexGrow: 1, position: "relative", px: '24px', mb:{xs:'100px' , md:0} }}>
         {props.children}
       </Box>
+      <BottomNavigation />
     </Box >
   );
 }

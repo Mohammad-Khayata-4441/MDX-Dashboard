@@ -5,8 +5,15 @@ import { createTheme } from "@mui/material";
 export const lightTheme = createTheme({
   direction: 'ltr',
   palette: {
+    primary: {
+      main: '#6F00FF'
+      
+    },
+    secondary: {
+      main: "#76FCFF",
+    },
     background: {
-      default: '#fafafa',
+      default: '#f9f9f9',
       paper: '#ffffff',
     },
     text: {
@@ -23,13 +30,14 @@ export const lightTheme = createTheme({
     },
     MuiPaper: {
       defaultProps: {
-        elevation: 0,
+        elevation: 1,
       }
     },
     MuiTextField: {
       styleOverrides: {
         root: (t) => ({
           borderRadius: 4,
+          border:'none',
           backgroundColor: t.ownerState.variant === 'outlined' ? t.theme.palette.background.default : 'transparent',
         })
       }
@@ -55,15 +63,15 @@ export const darkTheme = createTheme({
   palette: {
     mode: 'dark',
     primary: {
-      main: "#FD413C"
+      main: "#76FCFF"
     },
     secondary: {
-      main: '#FEBC2C'
+      main: '#6F00FF'
     },
 
     background: {
-      default: '#212529',
-      paper: '#2A2E32',
+      default: '#13181F',
+      paper: '#171E27',
     },
     text: {
       primary: "#ffffff",
@@ -89,7 +97,7 @@ export const darkTheme = createTheme({
     },
     MuiPaper: {
       defaultProps: {
-        elevation: 0,
+        elevation:1,
         sx: { border: 'none' }
       }
     }
