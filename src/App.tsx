@@ -1,6 +1,6 @@
 import { BrowserRouter } from "react-router-dom";
 import Router from "./components/app/Router";
-import { Alert, ThemeProvider } from "@mui/material";
+import {  ThemeProvider } from "@mui/material";
 import { lightTheme, darkTheme } from "./config/theme";
 import { useDarkMode } from 'usehooks-ts'
 import { useMemo } from 'react'

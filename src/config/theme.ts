@@ -1,4 +1,4 @@
-import { Theme, createTheme } from "@mui/material";
+import { createTheme } from "@mui/material";
 
 
 
@@ -29,7 +29,7 @@ export const lightTheme = createTheme({
     MuiTextField: {
       styleOverrides: {
         root: (t) => ({
-          borderRadius:4,
+          borderRadius: 4,
           backgroundColor: t.ownerState.variant === 'outlined' ? t.theme.palette.background.default : 'transparent',
         })
       }
@@ -75,9 +75,9 @@ export const darkTheme = createTheme({
 
     MuiTextField: {
       styleOverrides: {
-      
+
         root: (t) => ({
-          borderRadius:4,
+          borderRadius: 4,
           backgroundColor: t.ownerState.variant === 'outlined' ? t.theme.palette.background.default : 'transparent',
         })
       }

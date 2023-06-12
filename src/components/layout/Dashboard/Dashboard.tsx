@@ -1,13 +1,11 @@
 import * as React from "react";
 import { styled, useTheme, Theme, CSSObject } from "@mui/material/styles";
 import Box from "@mui/material/Box";
-import MuiDrawer, { DrawerProps } from "@mui/material/Drawer";
-import MuiAppBar, { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
+import MuiDrawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
-import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import DashboardNavLinks from "./DashboardNavLinks";
-import { Alert, CssBaseline, Divider, Typography } from "@mui/material";
+import {  CssBaseline, Typography } from "@mui/material";
 import Navbar from "./Navbar";
 import { BsChevronCompactLeft } from 'react-icons/bs'
 

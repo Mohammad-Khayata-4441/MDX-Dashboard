@@ -1,6 +1,6 @@
 import { styled } from "@mui/material/styles";
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
-import { Avatar, Badge, Box, Paper, IconButton, InputAdornment, Menu, MenuItem, TextField, Toolbar, Tooltip, Typography } from "@mui/material";
+import { Avatar, Badge, Box, Paper, IconButton, InputAdornment, TextField, Tooltip, Typography } from "@mui/material";
 import { IoNotificationsOutline, IoSearchOutline } from "react-icons/io5";
 import { HiOutlineMoon, HiOutlineSun } from "react-icons/hi2";
 import { useDarkMode } from "usehooks-ts";
