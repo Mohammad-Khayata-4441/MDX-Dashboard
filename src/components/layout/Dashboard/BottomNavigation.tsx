@@ -4,7 +4,7 @@ import { Paper } from '@mui/material'
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import Navigation from '@/Navigation';
-import { useLocation, useRoutes } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 export default function SimpleBottomNavigation() {
     const [value, setValue] = React.useState('');
     const location = useLocation()
@@ -16,7 +16,9 @@ export default function SimpleBottomNavigation() {
             <Paper>
 
                 <BottomNavigation
-
+                    sx={{
+                        overflow:'auto'
+                    }}
                     value={value}
                     onChange={(_, newValue) => {
                         setValue(newValue);
