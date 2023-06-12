@@ -25,7 +25,7 @@ const openedMixin = (theme: Theme, drawerWidth: number): CSSObject => ({
   overflowX: "hidden",
 });
 
-const closedMixin = (theme: Theme, drawerWidth: number): CSSObject => ({
+const closedMixin = (theme: Theme ): CSSObject => ({
   transition: theme.transitions.create("width", {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen,
@@ -58,8 +58,8 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== "open",
     "& .MuiDrawer-paper": openedMixin(theme, drawerWidth),
   }),
   ...(!open && {
-    ...closedMixin(theme, drawerWidth),
-    "& .MuiDrawer-paper": closedMixin(theme, drawerWidth),
+    ...closedMixin(theme),
+    "& .MuiDrawer-paper": closedMixin(theme),
   }),
 }));
 
