@@ -23,7 +23,7 @@ export default function Navbar({
   onMobileDrawerOpen
 }: Props) {
 
-  const { toggle, isDarkMode } = useDarkMode();
+  const { toggle, isDarkMode } = useDarkMode(false);
 
 
   const handleOpenUserMenu = () => { }
