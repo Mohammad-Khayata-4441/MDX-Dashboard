@@ -194,7 +194,7 @@ export default function Navbar({
                         flexDirection:'column'
                     }}>
                       <Typography>User Name</Typography>
-                      <Typography fontSize={10} className="text-gray-700">Admin</Typography>
+                      <Typography fontSize={10} color='GrayText' >Admin</Typography>
                     </Box>
 
 

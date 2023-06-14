@@ -97,7 +97,7 @@ export const darkTheme = createTheme({
     },
     MuiPaper: {
       defaultProps: {
-        elevation:1,
+        elevation:0,
         sx: { border: 'none' }
       }
     }
