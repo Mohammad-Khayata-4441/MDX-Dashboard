@@ -81,11 +81,11 @@ export default function Navbar({
   return (
     <HideOnScroll>
       <AppBar position="sticky" color="transparent" sx={{ p: 2 }} >
-        <Paper sx={() => ({ p: 3, transition: '0.4s' })} elevation={0}  >
+        <Paper   sx={() => ({ p: 3, transition: '0.4s', borderRadius:5 })} elevation={0}  >
 
 
           <Box display={'flex'} alignItems={'center'} gap={2} justifyContent={'space-between'} width={'100%'}>
-            <Box className="left" display={'flex'} gap={2} alignItems={'center'}>
+            <Box className="left"  display={'flex'} gap={2} alignItems={'center'} justifyContent={'center'}>
               {
                 !drawerOpen &&
                 (
@@ -97,6 +97,8 @@ export default function Navbar({
                     onClick={onOpen}
                     edge="start"
                     sx={{
+                      height:35,
+                      width:35,
                       display: {
                         xs: "none",
                         md: 'block'
@@ -203,29 +205,7 @@ export default function Navbar({
                 </Tooltip>
 
 
-                {/* <Menu
-              
-                sx={{ mt: '45px' }}
-                id="menu-appbar"
-                anchorEl={anchorElUser}
-                anchorOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
-                }}
-                open={Boolean(anchorElUser)}
-                onClose={handleCloseUserMenu}
-              >
-                {settings.map((setting) => (
-                  <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                    <Typography textAlign="center">{setting}</Typography>
-                  </MenuItem>
-                ))}
-              </Menu> */}
+        
               </Box>
 
 

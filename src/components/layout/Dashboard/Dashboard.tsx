@@ -11,7 +11,7 @@ import BottomNavigation from "./BottomNavigation";
 import { BsChevronCompactLeft } from 'react-icons/bs'
 
 const drawerFullWidth = 240;
-const miniSizedDrawerWidth = 90
+const miniSizedDrawerWidth = 88
 
 
 
@@ -86,6 +86,8 @@ export default function MiniDrawer(props: any) {
 
       <Drawer variant="permanent" open={open} drawerWidth={drawerWidth} PaperProps={{
         elevation: 0, variant: 'elevation', sx: {
+          borderTopLeftRadius: 0,
+          borderBottomLeftRadius: 0,
           border: 'none', display: {
             xs: 'none',
             md: 'block'
@@ -155,7 +157,7 @@ export default function MiniDrawer(props: any) {
         <DashboardNavLinks isOpen={true} />
       </MuiDrawer>
 
-      <Box component="main" sx={{ flexGrow: 1, position: "relative", px: '24px', mb: { xs: '100px', md: 0 } }}>
+      <Box component="main" sx={{ flexGrow: 1, position: "relative", px: '24px', pb: 2, mb: { xs: '100px', md: 0 } }}>
         {props.children}
       </Box>
       {/* <BottomNavigation /> */}

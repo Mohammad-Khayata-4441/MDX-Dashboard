@@ -7,10 +7,10 @@ export const lightTheme = createTheme({
   palette: {
     primary: {
       main: '#6F00FF'
-      
+
     },
     secondary: {
-      main: "#76FCFF",
+      main: "#F57077",
     },
     background: {
       default: '#f9f9f9',
@@ -29,7 +29,13 @@ export const lightTheme = createTheme({
       }
     },
     MuiPaper: {
+
       defaultProps: {
+        sx: {
+          border: 'none',
+          borderRadius: 5
+        },
+
         elevation: 1,
       }
     },
@@ -37,7 +43,7 @@ export const lightTheme = createTheme({
       styleOverrides: {
         root: (t) => ({
           borderRadius: 4,
-          border:'none',
+          border: 'none',
           backgroundColor: t.ownerState.variant === 'outlined' ? t.theme.palette.background.default : 'transparent',
         })
       }
@@ -66,7 +72,7 @@ export const darkTheme = createTheme({
       main: "#76FCFF"
     },
     secondary: {
-      main: '#6F00FF'
+      main: '#F57077'
     },
 
     background: {
@@ -80,7 +86,13 @@ export const darkTheme = createTheme({
     divider: '#373C40'
   },
   components: {
-
+    MuiButton: {
+      defaultProps: {
+        sx: {
+          borderRadius: 4
+        }
+      }
+    },
     MuiTextField: {
       styleOverrides: {
 
@@ -93,12 +105,16 @@ export const darkTheme = createTheme({
     MuiAppBar: {
       defaultProps: {
         elevation: 0,
-      }
+      },
+
     },
     MuiPaper: {
       defaultProps: {
-        elevation:0,
-        sx: { border: 'none' }
+        elevation: 0,
+        sx: {
+          border: 'none',
+          borderRadius: 5
+        }
       }
     }
   },

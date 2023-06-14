@@ -1,44 +1,45 @@
 import Page from "@/components/layout/shared/Page";
-import { Box, Button, Paper } from '@mui/material'
+import { Box, Button, Card, Typography } from '@mui/material'
 import { BsPlus } from "react-icons/bs";
-import Chart from "react-apexcharts";
-
+import AreaDemo from "@/components/demos/charts/ApexAreaDemo";
+import DountDemo from "@/components/demos/charts/ApexDountDemo";
+import Statistics from "@/components/demos/charts/Statistics";
+import UsersCard from "@/components/demos/cards/UsersCard";
 export default function Home() {
-  const chartOptions = {
-    options: {
-      chart: {
-        id: "basic-bar"
-      },
-      xaxis: {
-        categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999]
-      }
-    },
-    series: [
-      {
-        name: "series-1",
-        data: [30, 40, 45, 50, 49, 60, 70, 91]
-      }
-    ]
 
-  }
+
+
+
   return (
     <Page
       title="Home Page"
       actions={
         <Box>
-          <Button variant="text" endIcon={<BsPlus />}>New Item</Button>
+          <Button variant="contained" endIcon={<BsPlus />}>Add New User</Button>
 
         </Box>
       }>
 
 
-        <div className="grid grid-cols-12">
+      <div className="grid grid-cols-12 gap-4">
+        <Card className="col-span-12">
+            <Statistics></Statistics>
+        </Card>
+        <Card className='col-span-12 md:col-span-8'>
+          <div className="p-4">
 
-          <Paper className='col-span-4'>
-            <Chart options={chartOptions.options} series={chartOptions.series}>
-            </Chart>
-          </Paper>
+            <Typography variant="h6"   fontWeight={'bold'}>Yearly Finincial</Typography>
+            <Typography variant="body1" color='GrayText' >Lorem ipsum dolor sit amet.</Typography>
+
+          </div>
+          <AreaDemo></AreaDemo>
+        </Card>
+        <div className="col-span-12 md:col-span-4" >
+
+        <UsersCard></UsersCard>
         </div>
+      
+      </div>
 
     </Page >
   );
