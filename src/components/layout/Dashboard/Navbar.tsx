@@ -13,7 +13,7 @@ interface AppBarProps extends MuiAppBarProps {
 interface Props {
   drawerWidth: number;
   drawerOpen: boolean;
-  onMobileDrawerOpen: (e:any) => void;
+  onMobileDrawerOpen: (e: any) => void;
   onOpen: (e: any) => void;
 }
 export default function Navbar({
@@ -81,10 +81,10 @@ export default function Navbar({
   return (
     <HideOnScroll>
       <AppBar position="sticky" color="transparent" sx={{ p: 2 }} >
-        <Paper  sx={() => ({ p: 3, transition: '0.4s' })} elevation={0}  >
+        <Paper sx={() => ({ p: 3, transition: '0.4s' })} elevation={0}  >
 
 
-          <Box display={'flex'} alignItems={'center'} justifyContent={'space-between'} width={'100%'}>
+          <Box display={'flex'} alignItems={'center'} gap={2} justifyContent={'space-between'} width={'100%'}>
             <Box className="left" display={'flex'} gap={2} alignItems={'center'}>
               {
                 !drawerOpen &&
@@ -97,9 +97,9 @@ export default function Navbar({
                     onClick={onOpen}
                     edge="start"
                     sx={{
-                      display:{
-                        xs:"none",
-                        md:'block'
+                      display: {
+                        xs: "none",
+                        md: 'block'
                       }
                     }}
 
@@ -156,14 +156,14 @@ export default function Navbar({
             </Box>
             <Box className="right relative">
 
-              <Box sx={{ flexGrow: 0 , alignItems:'center' }} display={'flex'} gap={{
-                md:3,
-                xs:1
+              <Box sx={{ flexGrow: 0, alignItems: 'center' }} display={'flex'} gap={{
+                md: 3,
+                xs: 1
               }}>
 
 
 
-                <IconButton  onClick={() => toggle()}  >
+                <IconButton onClick={() => toggle()}  >
                   {
                     isDarkMode ?
                       <HiOutlineSun />
@@ -172,12 +172,12 @@ export default function Navbar({
                   }
                 </IconButton>
 
-                  <Badge variant="standard" color="error" badgeContent={5}>
-                    <IconButton  >
-                      <IoNotificationsOutline></IoNotificationsOutline>
-                    </IconButton>
+                <Badge variant="standard" color="error" badgeContent={5}>
+                  <IconButton  >
+                    <IoNotificationsOutline></IoNotificationsOutline>
+                  </IconButton>
 
-                  </Badge>
+                </Badge>
 
 
                 <Tooltip title="Open settings">
@@ -186,10 +186,16 @@ export default function Navbar({
                     <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                       <Avatar alt="Remy Sharp" src="/user.jpg" />
                     </IconButton>
-                    <div className="flex flex-col">
+                    <Box sx={{
+                      display: {
+                        xs: 'none',
+                        md: 'flex'
+                      },
+                        flexDirection:'column'
+                    }}>
                       <Typography>User Name</Typography>
                       <Typography fontSize={10} className="text-gray-700">Admin</Typography>
-                    </div>
+                    </Box>
 
 
                   </Box>
