@@ -81,7 +81,7 @@ export default function Navbar({
   return (
     <HideOnScroll>
       <AppBar position="sticky" color="transparent" sx={{ p: 2 }} >
-        <Paper classes={'transition-all duration-150'} sx={({ palette }) => ({ p: 3, transition: '0.4s' })} elevation={0}  >
+        <Paper  sx={() => ({ p: 3, transition: '0.4s' })} elevation={0}  >
 
 
           <Box display={'flex'} alignItems={'center'} justifyContent={'space-between'} width={'100%'}>
