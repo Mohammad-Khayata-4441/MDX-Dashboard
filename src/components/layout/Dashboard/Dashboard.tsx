@@ -67,9 +67,11 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== "open",
 export default function MiniDrawer(props: any) {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
+  const [isMobileDrawerOpen, setMobileDrawerOpen] = React.useState(false)
   const drawerWidth = React.useMemo(() => open ? drawerFullWidth : miniSizedDrawerWidth, [open])
   const handleDrawerOpen = () => {
     setOpen(true);
+
   };
 
   const handleDrawerClose = () => {
@@ -80,10 +82,10 @@ export default function MiniDrawer(props: any) {
     <Box sx={{ display: "flex", transition: '0.3s', flexDirection: 'column', width: { xs: '100%', md: `calc(100% - ${drawerWidth}px)` }, ml: { xs: 0, md: drawerWidth + 'px' } }}>
       <CssBaseline />
 
-      <Navbar drawerOpen={open} drawerWidth={drawerWidth} onOpen={handleDrawerOpen} />
+      <Navbar onMobileDrawerOpen={() => setMobileDrawerOpen(true)} drawerOpen={open} drawerWidth={drawerWidth} onOpen={handleDrawerOpen} />
 
       <Drawer variant="permanent" open={open} drawerWidth={drawerWidth} PaperProps={{
-        elevation: 1, variant: 'elevation', sx: {
+        elevation: 0, variant: 'elevation', sx: {
           border: 'none', display: {
             xs: 'none',
             md: 'block'
@@ -126,10 +128,37 @@ export default function MiniDrawer(props: any) {
         </Box>
       </Drawer>
 
-      <Box component="main" sx={{ flexGrow: 1, position: "relative", px: '24px', mb:{xs:'100px' , md:0} }}>
+      {/* Mobile Drawer  */}
+      <MuiDrawer onClose={() => setMobileDrawerOpen(false)} open={isMobileDrawerOpen}
+
+        ModalProps={{
+          sx: {
+            zIndex: 2500
+          }
+        }}
+
+        SlideProps={{
+
+          sx: (t: Theme) => ({
+            backgroundColor: t.palette.background.default,
+            width: 300
+          }),
+          elevation: 0
+        } as any}>
+        <DrawerHeader sx={{ display: 'flex', justifyContent: 'flex-start' }}>
+          <img width="48" src="/logo.png" />
+
+          <Typography fontSize={13} fontWeight={"bold"} variant="h2">
+            MDX Dashboard
+          </Typography>
+        </DrawerHeader>
+        <DashboardNavLinks isOpen={true} />
+      </MuiDrawer>
+
+      <Box component="main" sx={{ flexGrow: 1, position: "relative", px: '24px', mb: { xs: '100px', md: 0 } }}>
         {props.children}
       </Box>
-      <BottomNavigation />
+      {/* <BottomNavigation /> */}
     </Box >
   );
 }
