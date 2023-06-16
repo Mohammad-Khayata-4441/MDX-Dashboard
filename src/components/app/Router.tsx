@@ -1,9 +1,8 @@
-import  { Suspense } from 'react'
+import React, { Suspense } from 'react'
 import { Routes, Route } from 'react-router-dom'
 
-
 import DashboardLayout from '../layout/Dashboard/Dashboard'
-import Home from '../../views/home'
+const Home = React.lazy(() => import('@/features/Home/pages'))
 function Router() {
     const routes = [
         {

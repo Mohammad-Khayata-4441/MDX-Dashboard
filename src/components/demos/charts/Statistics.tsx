@@ -61,7 +61,7 @@ export default function Statistics() {
 
                                         {s.label}
                                     </Typography>
-                                    <Box borderRadius={'100%'} sx={({ palette }) => ({
+                                    <Box borderRadius={'100%'} sx={() => ({
                                         // backgroundColor: palette.background.default,
                                         width: 40,
                                         height: 40,
