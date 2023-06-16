@@ -4,8 +4,10 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode:'class',
   corePlugins:{
-    preflight:false
+    preflight:false,
+    
   },
   theme: {
     extend: {
