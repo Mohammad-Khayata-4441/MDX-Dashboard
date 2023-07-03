@@ -88,7 +88,10 @@ export default function MiniDrawer(props: any) {
         elevation: 0, variant: 'elevation', sx: {
           borderTopLeftRadius: 0,
           borderBottomLeftRadius: 0,
-          border: 'none', display: {
+          borderLeft: 'none',
+          borderTop:'none',
+          borderBottom:'none', 
+          display: {
             xs: 'none',
             md: 'block'
           }
