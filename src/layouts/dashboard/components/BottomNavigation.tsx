@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import { Paper } from '@mui/material'
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
-import Navigation from '@/Navigation';
+import Navigation from '@/router/dasboard.navigation';
 import { useLocation } from 'react-router-dom';
 export default function SimpleBottomNavigation() {
     const [value, setValue] = React.useState('');

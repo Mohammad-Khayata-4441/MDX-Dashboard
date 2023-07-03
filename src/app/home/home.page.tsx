@@ -1,10 +1,10 @@
-import Page from "@/components/layout/shared/Page";
+import Page from "@/shared/components/Page";
 import { Box, Button, Card, Typography } from '@mui/material'
 import { BsPlus } from "react-icons/bs";
-import AreaDemo from "@/components/demos/charts/ApexAreaDemo";
-import DountDemo from "@/components/demos/charts/ApexDountDemo";
-import Statistics from "@/components/demos/charts/Statistics";
-import UsersCard from "@/components/demos/cards/UsersCard";
+import AreaDemo from "@/shared/components/demos/charts/ApexAreaDemo";
+import DountDemo from "@/shared/components/demos/charts/ApexDountDemo";
+import Statistics from "@/shared/components/demos/charts/Statistics";
+import UsersCard from "@/shared/components/demos/cards/UsersCard";
 export default function Home() {
 
 
@@ -22,9 +22,9 @@ export default function Home() {
 
 
       <div className="grid grid-cols-12 gap-4">
-        <Card className="col-span-12">
+        <Box className="col-span-12">
             <Statistics></Statistics>
-        </Card>
+        </Box>
         <Card className='col-span-12 md:col-span-8'>
           <div className="p-4">
 

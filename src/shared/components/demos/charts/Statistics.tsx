@@ -82,7 +82,7 @@ export default function Statistics() {
                                         md: 36
                                     }
                                 } fontWeight={'bold'} >
-                                    <span className='dark:text-gray-400 mx-1' >{s.prefix}</span> {s.value}
+                                    <span className='dark:text-gray-400 mx-1' >{s.prefix}</span>{s.value}
                                 </Typography>
 
                             </Box>
@@ -90,7 +90,6 @@ export default function Statistics() {
 
                     )
                 }
-
 
             </Grid >
 

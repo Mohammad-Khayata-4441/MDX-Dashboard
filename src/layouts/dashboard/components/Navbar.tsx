@@ -79,13 +79,13 @@ export default function Navbar({
 
 
   return (
+
     <HideOnScroll>
-      <AppBar position="sticky" color="transparent" sx={{ p: 2 }} >
-        <Paper   sx={() => ({ p: 3, transition: '0.4s', borderRadius:5 })} elevation={0}  >
+      <AppBar position="sticky" color="transparent" sx={{ p: '24px', border: 0 }} >
 
-
+        <Paper sx={{ p:3}}>
           <Box display={'flex'} alignItems={'center'} gap={2} justifyContent={'space-between'} width={'100%'}>
-            <Box className="left"  display={'flex'} gap={2} alignItems={'center'} justifyContent={'center'}>
+            <Box className="left" display={'flex'} gap={2} alignItems={'center'} justifyContent={'center'}>
               {
                 !drawerOpen &&
                 (
@@ -97,8 +97,8 @@ export default function Navbar({
                     onClick={onOpen}
                     edge="start"
                     sx={{
-                      height:35,
-                      width:35,
+                      height: 35,
+                      width: 35,
                       display: {
                         xs: "none",
                         md: 'block'
@@ -193,7 +193,7 @@ export default function Navbar({
                         xs: 'none',
                         md: 'flex'
                       },
-                        flexDirection:'column'
+                      flexDirection: 'column'
                     }}>
                       <Typography>User Name</Typography>
                       <Typography fontSize={10} color='GrayText' >Admin</Typography>
@@ -205,7 +205,7 @@ export default function Navbar({
                 </Tooltip>
 
 
-        
+
               </Box>
 
 
@@ -216,7 +216,7 @@ export default function Navbar({
         </Paper>
 
       </AppBar>
-    </HideOnScroll>
 
+    </HideOnScroll>
   );
 }

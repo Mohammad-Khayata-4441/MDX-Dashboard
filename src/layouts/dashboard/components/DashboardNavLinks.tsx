@@ -1,6 +1,6 @@
 import List from "@mui/material/List";
 import { NavLink } from "react-router-dom";
-import navLinks from "@/Navigation";
+import navLinks from "@/router/dasboard.navigation";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";

@@ -1,9 +1,10 @@
 import { BrowserRouter } from "react-router-dom";
-import Router from "./components/app/Router";
+import Router from "../router/Router";
 import { ThemeProvider } from "@mui/material";
-import { lightTheme, darkTheme } from "./config/theme";
 import { useDarkMode } from 'usehooks-ts'
 import { useEffect, useMemo } from 'react'
+import { darkTheme } from "@/config/theme/dark.theme";
+import { lightTheme } from "@/config/theme/light.theme";
 function App() {
   const { isDarkMode, } = useDarkMode(false);
 

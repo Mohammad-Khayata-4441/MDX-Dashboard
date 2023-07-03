@@ -4,10 +4,10 @@ import Box from "@mui/material/Box";
 import MuiDrawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import DashboardNavLinks from "./DashboardNavLinks";
+import DashboardNavLinks from "./components/DashboardNavLinks";
 import { CssBaseline, Typography } from "@mui/material";
-import Navbar from "./Navbar";
-import BottomNavigation from "./BottomNavigation";
+import Navbar from "./components/Navbar";
+import BottomNavigation from "./components/BottomNavigation";
 import { BsChevronCompactLeft } from 'react-icons/bs'
 
 const drawerFullWidth = 240;
