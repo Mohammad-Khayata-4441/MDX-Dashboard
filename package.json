@@ -19,6 +19,8 @@
     "@mui/styled-engine-sc": "^5.12.0",
     "@types/node": "^20.3.0",
     "apexcharts": "^3.41.0",
+    "axios": "^1.4.0",
+    "object-to-formdata": "^4.5.1",
     "react": "^18.2.0",
     "react-apexcharts": "^1.4.0",
     "react-dom": "^18.2.0",
