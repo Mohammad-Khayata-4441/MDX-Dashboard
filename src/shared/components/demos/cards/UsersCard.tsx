@@ -13,10 +13,11 @@ export default function UsersCard() {
                     </ListItemAvatar>
 
                     <ListItemText
+
                         primary="Mohammad Khayata"
                         secondary={
                             <>
-                                <Chip color='info' size='small' label='SuperAdmin'></Chip>
+                                <span >SuperAdmin</span>
                             </>
                         }
                     />
@@ -33,7 +34,7 @@ export default function UsersCard() {
                         primary="Albert"
                         secondary={
                             <>
-                                <Chip color='default' size='small' label='Admin'></Chip>
+                                <span >Admin</span>
                             </>
                         }
                     />
@@ -50,7 +51,7 @@ export default function UsersCard() {
                         primary="Emilia clarke"
                         secondary={
                             <>
-                                <Chip color='default' size='small' label='Admin'></Chip>
+                                <span >Admin</span>
                             </>
                         }
                     />
@@ -67,7 +68,7 @@ export default function UsersCard() {
                         primary="Gabriel Martinelli"
                         secondary={
                             <>
-                                <Chip color='default' size='small' label='Admin'></Chip>
+                                <span >Admin</span>
                             </>
                         }
                     />

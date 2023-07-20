@@ -54,11 +54,10 @@ export default function Statistics() {
             }} paddingY={3}>
                 {
                     stats.map((s) =>
-                        <Grid xs={12} md={3} display={'flex'} justifyContent={'center'}>
+                        <Grid xs={12} key={s.label} md={3} display={'flex'} justifyContent={'center'}>
                             <Box display={'flex'} flexDirection={'column'} >
                                 <div className="flex gap-4 justify-between items-center">
                                     <Typography variant='h6'>
-
                                         {s.label}
                                     </Typography>
                                     <Box borderRadius={'100%'} sx={() => ({

@@ -26,7 +26,7 @@ export default function SimpleBottomNavigation() {
                 >
                     {
                         Navigation.map((nav) => (
-                            <BottomNavigationAction  value={nav.path} label={nav.text}
+                            <BottomNavigationAction key={nav.path}  value={nav.path} label={nav.text}
                                 icon={
 
                                     <nav.icon  className='text-7xl h-62 w-62'/>

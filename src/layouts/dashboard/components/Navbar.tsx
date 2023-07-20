@@ -26,7 +26,9 @@ export default function Navbar({
   const { toggle, isDarkMode } = useDarkMode(false);
 
 
-  const handleOpenUserMenu = () => { }
+  const handleOpenUserMenu = () => { 
+    console.log('wtf')
+  }
 
   interface Props {
     /**

@@ -1,7 +1,7 @@
 import * as React from "react";
 import { styled, useTheme, Theme, CSSObject } from "@mui/material/styles";
 import Box from "@mui/material/Box";
-import MuiDrawer from "@mui/material/Drawer";
+import MuiDrawer, { DrawerProps } from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import DashboardNavLinks from "./components/DashboardNavLinks";
@@ -49,7 +49,7 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 
 
 
-const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== "open", })<{ drawerWidth: number }>(({ theme, open, drawerWidth }) => ({
+const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== "drawerWidth" })<{ drawerWidth: number }>(({ theme, open, drawerWidth }) => ({
   width: drawerWidth,
   flexShrink: 0,
   whiteSpace: "nowrap",
@@ -64,7 +64,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== "open",
   }),
 }));
 
-export default function MiniDrawer(props: any) {
+export default function MiniDrawer(props: DrawerProps) {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
   const [isMobileDrawerOpen, setMobileDrawerOpen] = React.useState(false)
@@ -143,7 +143,6 @@ export default function MiniDrawer(props: any) {
         }}
 
         SlideProps={{
-
           sx: (t: Theme) => ({
             backgroundColor: t.palette.background.default,
             width: 300
