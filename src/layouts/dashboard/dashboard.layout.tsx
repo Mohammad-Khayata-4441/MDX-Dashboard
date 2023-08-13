@@ -7,7 +7,6 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import DashboardNavLinks from "./components/DashboardNavLinks";
 import { CssBaseline, Typography } from "@mui/material";
 import Navbar from "./components/Navbar";
-import BottomNavigation from "./components/BottomNavigation";
 import { BsChevronCompactLeft } from 'react-icons/bs'
 
 const drawerFullWidth = 240;
