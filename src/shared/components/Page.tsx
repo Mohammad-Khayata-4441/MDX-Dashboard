@@ -1,19 +1,21 @@
-import React, { PropsWithChildren, ReactNode } from 'react'
+import React, { PropsWithChildren, ReactNode, ReactElement } from 'react'
 import { Box, Typography } from '@mui/material'
 interface Props {
     title: string,
+    appendTitle?: ReactElement,
     actions?: ReactNode
 }
-export default function Page({ title, actions, children }: PropsWithChildren<Props>) {
+export default function Page({ title, actions, children, appendTitle }: PropsWithChildren<Props>) {
     return (
         <div>
-            <Box display={'flex'} justifyContent={'space-between'}  alignItems={'center'}>
+            <Box display={'flex'} justifyContent={'space-between'} alignItems={'center'}>
 
-                <div className="navigation">
+                <Box display='flex' alignItems='center' gap={2} className="navigation">
                     <Typography fontSize={'24px'} fontWeight={'bold'} variant='h1'>
                         {title}
                     </Typography>
-                </div>
+                    {appendTitle}
+                </Box>
 
 
                 <div className="actions">
@@ -22,11 +24,11 @@ export default function Page({ title, actions, children }: PropsWithChildren<Pro
 
 
             </Box>
-                <Box mt={2}>
+            <Box mt={2}>
 
                 {children}
-                </Box>
-                
+            </Box>
+
         </div>
     )
 }

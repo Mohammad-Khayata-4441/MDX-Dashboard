@@ -109,7 +109,7 @@ export default function MiniDrawer(props: DrawerProps) {
             {
               open &&
               <Typography fontSize={13} fontWeight={"bold"} variant="h2">
-                MDX Dashboard
+                YouCloud
               </Typography>
             }
             {

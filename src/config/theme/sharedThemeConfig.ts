@@ -1,5 +1,4 @@
 import { Theme } from '@mui/material'
-import { TypographyOptions } from '@mui/material/styles/createTypography'
 export const sharedThemeConfig: Partial<Theme> = {
     components: {
         
@@ -7,16 +6,27 @@ export const sharedThemeConfig: Partial<Theme> = {
             
             styleOverrides: {
                 root: () => ({
-                    borderRadius: '1rem',
+                    borderRadius: '0.6rem',
                 })
             }
         },
         MuiOutlinedInput: {
+            defaultProps:{
+                size:'small'
+            },
             styleOverrides: {
+                
                 root: (t) => ({
-                    borderRadius: '1rem',
+                    borderRadius: '0.6rem',
                     backgroundColor: t.ownerState.variant === 'outlined' ? t.theme.palette.background.default : 'transparent',
                 })
+            }
+        },
+        MuiFormLabel:{
+            styleOverrides:{
+                root:{
+                    marginBottom:"5px"
+                }
             }
         },
         MuiAppBar: {
@@ -36,7 +46,7 @@ export const sharedThemeConfig: Partial<Theme> = {
             
             styleOverrides: {
                 root: () => ({
-                    borderRadius: '1.5rem',
+                    borderRadius: '1.2rem',
 
                 })
             }
