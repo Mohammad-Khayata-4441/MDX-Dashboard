@@ -10,12 +10,13 @@ import { useApi } from '@/shared/hooks/useApi'
 import { SessionActions } from '@/api/session/session.actions'
 import { useParams } from 'react-router-dom'
 import { PaymentAcions } from '@/api/payment/payment.actions'
+import Swal from 'sweetalert2'
 export default function CreditCardTab({ sessionData }: {
     sessionData: GetSessionDto | null
 }) {
 
-    const [number, setNumber] = useState('')
-    const [country, setCountry] = useState("AE")
+    const [isSuccess, setIsSucess] = useState(false)
+
     const params = useParams()
     const { control, handleSubmit, watch } = useForm<CreatePaymentDto>({
         defaultValues: {
@@ -34,23 +35,23 @@ export default function CreditCardTab({ sessionData }: {
     })
 
 
-    const hasZipCode = useMemo(() => !countriesWithNoPostalCode.includes(country), [country])
+    // const hasZipCode = useMemo(() => !countriesWithNoPostalCode.includes(country), [country])
 
 
     const submit = async (data: CreatePaymentDto) => {
-        console.log(!!sessionData , !!params.sessionId)
+        console.log(!!sessionData, !!params.sessionId)
 
-         if (!!sessionData && !!params.sessionId) {
-            console.log('submit',data)
+        if (!!sessionData && !!params.sessionId) {
+            console.log('submit', data)
             const payload: CreatePaymentDto = {
                 amount: sessionData.sessionInfo.amount,
                 description: sessionData.sessionInfo.description,
                 paymentMethod: {
-                    type: 'card',
+                    type: 'CARD',
                     card: {
                         brand: getCardType(data.paymentMethod.card.pan),
                         ccv: data.paymentMethod.card.pan,
-                        expiry: data.paymentMethod.card.expiry,
+                        expiry: data.paymentMethod.card.expiry.replace('/', ''),
                         is3DSEnabled: false,
                         name: data.paymentMethod.card.name,
                         pan: data.paymentMethod.card.pan
@@ -63,8 +64,15 @@ export default function CreditCardTab({ sessionData }: {
 
             }
 
-            await PaymentAcions.CreatePayment(params.sessionId, payload)
-
+            try {
+                await PaymentAcions.CreatePayment(params.sessionId, payload)
+                Swal.fire({ title: 'Payment Success', html: 'Payment Successfull', icon: 'success', })
+            }
+            
+            catch(er){
+                Swal.fire({ title: 'Payment Faild', text: 'Some thing went wrong , pleas try again', icon: 'error', })
+                
+            }
 
         }
     }
@@ -96,7 +104,7 @@ export default function CreditCardTab({ sessionData }: {
                         <FormControl sx={{ width: '100%' }}>
                             <FormLabel> Date</FormLabel>
                             <Controller control={control} name='paymentMethod.card.expiry' rules={{ required: true, pattern: { value: /^(0[1-9]|1[0-2])\/\d{2}$/, message: 'Please enter the value in format MM/YY' } }} render={({ field, fieldState }) =>
-                                <TextField placeholder='YY/MM' {...field} error={fieldState.invalid} helperText={fieldState.error?.message}  ></TextField>
+                                <TextField placeholder='MM/YY' {...field} error={fieldState.invalid} helperText={fieldState.error?.message}  ></TextField>
                             } />
                         </FormControl>
                     </div>
@@ -137,7 +145,7 @@ export default function CreditCardTab({ sessionData }: {
                         </FormControl>
                     </div>
                     {
-                        hasZipCode &&
+                        true &&
                         <div className='col-span-12 md:col-span-4' >
                             <FormControl fullWidth >
                                 <FormLabel> Zip Code</FormLabel>
