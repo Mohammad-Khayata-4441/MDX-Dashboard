@@ -85,6 +85,7 @@ export default function MiniDrawer(props: DrawerProps) {
 
       <Drawer variant="permanent" open={open} drawerWidth={drawerWidth} PaperProps={{
         elevation: 0, variant: 'elevation', sx: {
+          backgroundColor:({palette})=>palette.secondary.main,
           borderTopLeftRadius: 0,
           borderBottomLeftRadius: 0,
           borderLeft: 'none',
@@ -105,16 +106,11 @@ export default function MiniDrawer(props: DrawerProps) {
             alignItems={"center"}
             px={1}
           >
-            <img width="48" src="/logo.png" />
+            <img width={open?140:60} src="/logo.svg" />
+        
             {
               open &&
-              <Typography fontSize={13} fontWeight={"bold"} variant="h2">
-                YouCloud
-              </Typography>
-            }
-            {
-              open &&
-              <IconButton size="small" onClick={() => open ? handleDrawerClose() : handleDrawerOpen()}>
+              <IconButton color="primary" size="small" onClick={() => open ? handleDrawerClose() : handleDrawerOpen()}>
                 {theme.direction === "rtl" ? (
                   <ChevronRightIcon />
                 ) : (

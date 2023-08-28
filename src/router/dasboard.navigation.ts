@@ -1,78 +1,80 @@
 
-import { HiOutlineHome, HiOutlineShoppingCart, HiOutlineUsers } from 'react-icons/hi2'
-import { IoExtensionPuzzleOutline, IoFolderOpenOutline } from 'react-icons/io5'
+import { HiLink, HiMiniQrCode, HiOutlineBuildingLibrary, HiOutlineHome } from 'react-icons/hi2'
 import { NavigationRecord } from '@/shared/types/navigation'
-import { BiCreditCard } from 'react-icons/bi';
-const DashboardNavigation: NavigationRecord [] = [
+import { MdManageAccounts, MdPayment} from 'react-icons/md';
+import { AiOutlineGateway, AiOutlineTransaction } from 'react-icons/ai';
+import { BsFillClipboardDataFill } from 'react-icons/bs';
+import { IoReceipt } from 'react-icons/io5';
+import { FiLink2 } from 'react-icons/fi';
+export const DashboardNavigationMain: NavigationRecord [] = [
 
     {
-        text: "Home",
+        text: "Dashboard",
         path: "/",
         icon: HiOutlineHome,
     },
     {
-        text: "Components",
-        path: "/components",
-        icon: IoExtensionPuzzleOutline,
+        text: "Transactions",
+        path: "/transactions",
+        icon: AiOutlineTransaction,
     },
     {
-        text: "eCommerce",
-        path: "/eCommerce",
-        icon: HiOutlineShoppingCart,
+        text: "Settelements",
+        path: "/settelements",
+        icon: HiOutlineBuildingLibrary,
     },
     {
-        text: "File",
-        path: "/fileManager",
-        icon: IoFolderOpenOutline,
+        text: "Report",
+        path: "/reports",
+        icon: BsFillClipboardDataFill,
     },
     {
-        text: "Accounts",
-        path: "/accounts",
-        icon: HiOutlineUsers,
+        text: "Account Settings",
+        path: "/account-settings",
+        icon: MdManageAccounts,
     },
-    {
-        text: "Payment Methods",
-        path: "/payment-methods",
-        icon: BiCreditCard,
-    },
+    // {
+    //     text: "Payment Methods",
+    //     path: "/payment-methods",
+    //     icon: MdPayment,
+    // },
+
   
 ]
 
-// const DashboardNavigation: NavigationRecord = {
+export const PaymentNavigationLinks : NavigationRecord [] = [
+    {
+        text:"Payment Gateway",
+        icon:AiOutlineGateway,
+        path:'/payment-gateway',
+    },
 
-    //     main: [
-    //         {
-    //             text: "Home",
-    //             path: "/",
-    //             icon: HiOutlineHome,
-    
-    //         },
-    //         {
-    //             text: "Components",
-    //             path: "/components",
-    //             icon: IoExtensionPuzzleOutline,
-    //         },
-    //         {
-    //             text: "eCommerce",
-    //             path: "/eCommerce",
-    //             icon: HiOutlineShoppingCart,
-    //         },
-    //         {
-    //             text: "File",
-    //             path: "/fileManager",
-    //             icon: IoFolderOpenOutline,
-    //         },
-    //         {
-    //             text: "Accounts",
-    //             path: "/accounts",
-    //             icon: HiOutlineUsers,
-    //         },
-    //         {
-    //             text: "Notifications",
-    //             path: "/notifications",
-    //             icon: IoNotificationsOutline,
-    //         },
-    //     ]
-    // }
+    {
+        text:'Qr Payment',
+        icon:HiMiniQrCode,
+        path:'/qr-payment'
+    },
 
-export default DashboardNavigation;
+    {
+        text:'Payment Link',
+        icon:FiLink2,
+        path:'/payment-link'
+    },
+
+    {
+        text:'Invoices',
+        icon:IoReceipt,
+        path:'/invoices'
+    },
+    {
+        text:'Subscriptions',
+        icon:HiMiniQrCode,
+        path:'/subscriptions'
+    },
+]
+
+ 
+
+
+
+export default DashboardNavigationMain;

@@ -2,25 +2,29 @@ import { createTheme } from '@mui/material'
 import { sharedThemeConfig } from './sharedThemeConfig';
 export const lightTheme = createTheme({
     ...sharedThemeConfig,
-
-    direction: 'ltr',
     palette: {
+        mode: 'light',
         primary: {
-            main: '#6F00FF'
-
+            main: '#34C2F4',
+            contrastText: "#fff"
         },
         secondary: {
-            main: "#F57077",
+            main: "#00323F",
+            light:'#EDF6F9'
         },
         background: {
             default: '#f9f9f9',
             paper: '#ffffff',
         },
+        divider: '#DCE6EA',
+
         text: {
             primary: "#2f2f2f",
             secondary: "#777777"
         },
-        divider: '#eeeeee'
+
     },
+ 
+
 
 });

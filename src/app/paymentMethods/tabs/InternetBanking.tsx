@@ -1,5 +1,4 @@
 import { RadioGroup, Radio, Select, MenuItem, InputLabel, FormControl, FormControlLabel, Card, Paper } from '@mui/material'
-import Grid2 from '@mui/material/Unstable_Grid2/Grid2'
 import React from 'react'
 
 export default function InternetBanking() {
@@ -8,8 +7,8 @@ export default function InternetBanking() {
 
             <h5>Popular Banks </h5>
 
-            <Grid2 container>
-                <Grid2 xs={12}>
+            <div className='grid grid-cols-12'>
+                <div className='col-span-12'>
 
                     <RadioGroup
                         row
@@ -33,11 +32,11 @@ export default function InternetBanking() {
                         </Paper>
 
                     </RadioGroup>
-                </Grid2>
+                </div>
 
                 <h5>All Banks </h5>
 
-                <Grid2 xs={12}>
+                <div className='col-span-12'>
                     <InputLabel > Choose Bank </InputLabel>
                     <FormControl placeholder='Select bank' size='small' fullWidth>
                         <Select placeholder='Select bank' >
@@ -45,8 +44,8 @@ export default function InternetBanking() {
                             <MenuItem value="A">Bank B</MenuItem>
                         </Select>
                     </FormControl>
-                </Grid2>
-            </Grid2>
+                </div>
+            </div>
         </div >
     )
 }

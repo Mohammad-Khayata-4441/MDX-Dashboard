@@ -1,10 +1,11 @@
 import { BrowserRouter } from "react-router-dom";
 import Router from "../router/Router";
-import { ThemeProvider } from "@mui/material";
+import { ThemeProvider } from "@mui/material/styles";
 import { useDarkMode } from 'usehooks-ts'
 import { useEffect, useMemo } from 'react'
 import { darkTheme } from "@/config/theme/dark.theme";
 import { lightTheme } from "@/config/theme/light.theme";
+import FeedBackProvider from "@/shared/components/FeedBackProvider";
 function App() {
   const { isDarkMode, } = useDarkMode(false);
 
@@ -21,10 +22,12 @@ function App() {
       <div className="app">
         <BrowserRouter>
           <ThemeProvider theme={activeTheme}>
-            <Router></Router>
+            <FeedBackProvider >
+              <Router></Router>
+            </FeedBackProvider>
           </ThemeProvider>
         </BrowserRouter>
-      </div>
+      </div >
     </>
   );
 }

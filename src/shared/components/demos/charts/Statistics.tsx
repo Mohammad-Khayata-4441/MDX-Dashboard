@@ -1,6 +1,5 @@
 import React from 'react'
 import { Card, Typography, Box, Icon } from '@mui/material'
-import Grid from '@mui/material/Unstable_Grid2/Grid2'
 import { BiUpArrow, BiDownArrow } from 'react-icons/bi'
 import { FaBoxes } from 'react-icons/fa'
 import { HiUsers } from 'react-icons/hi2'
@@ -48,13 +47,10 @@ export default function Statistics() {
         <Card sx={{ p: 2 }}>
             <Typography color='primary' fontWeight={'bold'} variant="h6">Daily Statistics</Typography>
 
-            <Grid container spacing={{
-                xs: 5,
-                md: 0
-            }} paddingY={3}>
+            <div className='grid grid-cols-12'>
                 {
                     stats.map((s) =>
-                        <Grid xs={12} key={s.label} md={3} display={'flex'} justifyContent={'center'}>
+                        <div className='col-span-12 md:col-span-3' key={s.label} >
                             <Box display={'flex'} flexDirection={'column'} >
                                 <div className="flex gap-4 justify-between items-center">
                                     <Typography variant='h6'>
@@ -85,12 +81,12 @@ export default function Statistics() {
                                 </Typography>
 
                             </Box>
-                        </Grid>
+                        </div>
 
                     )
                 }
 
-            </Grid >
+            </div >
 
         </Card >
     )
