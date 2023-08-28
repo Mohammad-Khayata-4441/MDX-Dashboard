@@ -69,13 +69,17 @@ export default function PaymentMethods() {
                             </div>
 
 
-                            <div className='col-span-12 lg:col-span-4' >
-                                <Card sx={{ p: 2, my: { xs: 2, md: 0 } }} >
-                                    <Typography fontWeight='bold' variant='h6'>Customer Name</Typography>
-                                    <Typography >Some description About the customer and Some description About the customer</Typography>
 
-                                    <Box sx={{ p: 1, mt: 4, backgroundColor: (t) => t.palette.background.default, borderRadius: 2, }}>Payment Ammount : 2300 $</Box>
-                                </Card>
+                            <div className='col-span-12 lg:col-span-4' >
+                                {
+                                    sessionData &&
+                                    <Card sx={{ p: 2, my: { xs: 2, md: 0 } }} >
+                                        <Typography fontWeight='bold' variant='h6'>{sessionData.sessionInfo.merchant.name}</Typography>
+                                        <Typography >{sessionData.sessionInfo.description}</Typography>
+
+                                        <Box sx={{ p: 1, mt: 4, backgroundColor: (t) => t.palette.background.default, borderRadius: 2, }}>Payment Ammount : {sessionData.sessionInfo.amount.amountInCents} ${sessionData.sessionInfo.amount.currency}</Box>
+                                    </Card>
+                                }
                             </div>
 
                         </div>

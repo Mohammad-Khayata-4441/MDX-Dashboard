@@ -10,8 +10,8 @@ export class SessionActions {
     }
 
     static async GetSession(sessionId: string) {
-        const res = await useApi<GetSessionDto>('GET', SESSION_ENDPOINTS.BASE + `/${sessionId}`, { confirm: null, errorMessage: true, successMessage: false })
-        return res?.data
+        const res = await useApi<{data:GetSessionDto}>('GET', SESSION_ENDPOINTS.BASE + `/${sessionId}`, { confirm: null, errorMessage: true, successMessage: false })
+        return res?.data.data
     }
 
 
