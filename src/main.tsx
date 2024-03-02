@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom/client'
 import App from './app/app.tsx'
 import "@fontsource/almarai"
 import "@fontsource/poppins"
-import '@/styles/_global_imports.scss'
-
+import './_main.scss'
+ 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <App />

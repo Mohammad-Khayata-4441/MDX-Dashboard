@@ -4,9 +4,9 @@ import Box from "@mui/material/Box";
 import MuiDrawer, { DrawerProps } from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import DashboardNavLinks from "./components/DashboardNavLinks";
+import DashboardNavLinks from "./components/layout/DashboardNavLinks";
 import { CssBaseline, Typography } from "@mui/material";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/layout/Navbar";
 import { BsChevronCompactLeft } from 'react-icons/bs'
  import navLinks from "@/app/dashboard/dasboard.navigation";
 import { AppConfig } from "@/app.config";

@@ -2,10 +2,14 @@ import Page from "@/shared/components/Page";
 import { Box, Button, Card, Typography } from "@mui/material";
 import { BsPlus } from "react-icons/bs";
 import AreaDemo from "@/shared/components/demos/charts/ApexAreaDemo";
- import Statistics from "@/shared/components/demos/charts/Statistics";
+import Statistics from "@/shared/components/demos/charts/Statistics";
 import UsersCard from "@/shared/components/demos/cards/UsersCard";
-  export default function Home() {
- 
+import { useTranslation } from "react-i18next";
+export default function Home() {
+
+  const [t] = useTranslation()
+
+
   return (
     <Page
       title="Home Page"
@@ -17,6 +21,7 @@ import UsersCard from "@/shared/components/demos/cards/UsersCard";
         </Box>
       }
     >
+      {/* {t('message')} */}
       <div className="grid grid-cols-12 gap-4">
         <Box className="col-span-12">
           <Statistics></Statistics>

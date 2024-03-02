@@ -10,12 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@emotion/react": "^11.11.0",
+    "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.0",
     "@fontsource/almarai": "^4.5.9",
     "@fontsource/poppins": "^4.5.10",
     "@mui/icons-material": "^5.11.16",
-    "@mui/material": "^5.13.0",
+    "@mui/material": "^5.15.11",
     "@mui/styled-engine-sc": "^5.12.0",
     "@tanstack/react-query": "^5.24.1",
     "@types/node": "^20.3.0",
@@ -26,6 +26,7 @@
     "react": "^18.2.0",
     "react-apexcharts": "^1.4.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.51.0",
     "react-i18next": "^14.0.5",
     "react-icons": "^5.0.1",
     "react-router-dom": "^6.11.1",

@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react'
 import { Routes, Route } from 'react-router-dom'
-import { DashboardRoutes } from '../app/dashboard/dashboard.routes'
+import { DashboardRoutes } from './dashboard/dashboard.routes'
 function Router() {
     return (
         <Routes>

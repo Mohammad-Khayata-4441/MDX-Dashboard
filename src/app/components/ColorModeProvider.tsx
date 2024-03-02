@@ -6,7 +6,6 @@ export default function ColorModeProvider(props: PropsWithChildren) {
     return (
         <ColorModeContext.Provider value={{ mode, setMode }}>
             {props.children}
-
         </ColorModeContext.Provider>
     )
 }

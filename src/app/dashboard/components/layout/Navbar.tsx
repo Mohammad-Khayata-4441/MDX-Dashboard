@@ -1,13 +1,30 @@
 import { styled } from "@mui/material/styles";
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
-import useScrollTrigger from '@mui/material/useScrollTrigger';
-import { Avatar, Badge, Box, Paper, IconButton, InputAdornment, TextField, Tooltip, Typography, Slide } from "@mui/material";
-import { IoMenu, IoMenuOutline, IoNotificationsOutline, IoSearchOutline } from "react-icons/io5";
+import useScrollTrigger from "@mui/material/useScrollTrigger";
+import {
+  Avatar,
+  Badge,
+  Box,
+  Paper,
+  IconButton,
+  InputAdornment,
+  TextField,
+  Tooltip,
+  Typography,
+  Slide,
+} from "@mui/material";
+import {
+  IoMenu,
+  IoMenuOutline,
+  IoNotificationsOutline,
+  IoSearchOutline,
+} from "react-icons/io5";
 import { HiOutlineMoon, HiOutlineSun } from "react-icons/hi2";
 // import { useDarkMode } from "usehooks-ts";
-import { BsChevronCompactRight, BsMenuApp } from 'react-icons/bs'
+import { BsChevronCompactRight, BsMenuApp } from "react-icons/bs";
 import { useContext } from "react";
 import { ColorModeContext } from "@/app/hooks/useDarkMode";
+import LocaleSelect from "../LocaleSelect";
 interface AppBarProps extends MuiAppBarProps {
   open?: boolean;
 }
@@ -22,18 +39,17 @@ export default function Navbar({
   drawerWidth,
   onOpen,
   drawerOpen,
-  onMobileDrawerOpen
+  onMobileDrawerOpen,
 }: Props) {
-
   // const { toggle, isDarkMode } = useDarkMode({localStorageKey:'dark_mode'});
-  const { mode, setMode } = useContext(ColorModeContext)
-  const toggle = () => {
-    setMode(mode === 'dark' ? 'light' : 'dark')
-  }
+  const { mode, setMode } = useContext(ColorModeContext);
+     const toggle = () => {
+    setMode(mode === "dark" ? "light" : "dark");
+  };
 
   const handleOpenUserMenu = () => {
-    console.log('wtf')
-  }
+    console.log("wtf");
+  };
 
   interface Props {
     /**
@@ -51,7 +67,7 @@ export default function Navbar({
     // This is only being set here because the demo is in an iframe.
     const trigger = useScrollTrigger({
       target: window ? window() : undefined,
-      threshold: 50
+      threshold: 50,
     });
 
     return (
@@ -60,7 +76,6 @@ export default function Navbar({
       </Slide>
     );
   }
-
 
   const AppBar = styled(MuiAppBar, {
     shouldForwardProp: (prop) => prop !== "open",
@@ -80,45 +95,47 @@ export default function Navbar({
     }),
   }));
 
-
-
-
-
-
   return (
-
     <HideOnScroll>
-      <AppBar position="sticky" color="transparent" sx={{ p: '24px', border: 0 }} >
-
+      <AppBar
+        position="sticky"
+        color="transparent"
+        sx={{ p: "24px", border: 0 }}
+      >
         <Paper sx={{ p: 3 }}>
-          <Box display={'flex'} alignItems={'center'} gap={2} justifyContent={'space-between'} width={'100%'}>
-            <Box className="left" display={'flex'} gap={2} alignItems={'center'} justifyContent={'center'}>
-              {
-                !drawerOpen &&
-                (
-
-                  <IconButton
-                    size="small"
-                    color="inherit"
-                    aria-label="open drawer"
-                    onClick={onOpen}
-                    edge="start"
-                    sx={{
-                      height: 35,
-                      width: 35,
-                      display: {
-                        xs: "none",
-                        md: 'block'
-                      }
-                    }}
-
-                  >
-                    <BsChevronCompactRight />
-                  </IconButton>
-                )
-
-              }
-
+          <Box
+            display={"flex"}
+            alignItems={"center"}
+            gap={2}
+            justifyContent={"space-between"}
+            width={"100%"}
+          >
+            <Box
+              className="left"
+              display={"flex"}
+              gap={2}
+              alignItems={"center"}
+              justifyContent={"center"}
+            >
+              {!drawerOpen && (
+                <IconButton
+                  size="small"
+                  color="inherit"
+                  aria-label="open drawer"
+                  onClick={onOpen}
+                  edge="start"
+                  sx={{
+                    height: 35,
+                    width: 35,
+                    display: {
+                      xs: "none",
+                      md: "block",
+                    },
+                  }}
+                >
+                  <BsChevronCompactRight />
+                </IconButton>
+              )}
 
               <IconButton
                 onClick={onMobileDrawerOpen}
@@ -128,10 +145,9 @@ export default function Navbar({
                 edge="start"
                 sx={{
                   display: {
-                    md: 'none',
-                  }
+                    md: "none",
+                  },
                 }}
-
               >
                 <IoMenuOutline />
               </IconButton>
@@ -141,8 +157,8 @@ export default function Navbar({
                   width: {
                     sm: 300,
                     md: 400,
-                    lg: 600
-                  }
+                    lg: 600,
+                  },
                 }}
                 size="small"
                 variant="outlined"
@@ -154,76 +170,54 @@ export default function Navbar({
                     </InputAdornment>
                   ),
                 }}
-
               />
-
-
-
-
-
-
             </Box>
             <Box className="right relative">
-
-              <Box sx={{ flexGrow: 0, alignItems: 'center' }} display={'flex'} gap={{
-                md: 3,
-                xs: 1
-              }}>
-
-
-
-                <IconButton onClick={() => toggle()}  >
-                  {
-                    mode ==='dark' ?
-                      <HiOutlineSun />
-                      :
-                      <HiOutlineMoon />
-                  }
+              <Box
+                sx={{ flexGrow: 0, alignItems: "center" }}
+                display={"flex"}
+                gap={{
+                  md: 3,
+                  xs: 1,
+                }}
+              >
+                <IconButton onClick={() => toggle()}>
+                  {mode === "dark" ? <HiOutlineSun /> : <HiOutlineMoon />}
                 </IconButton>
 
                 <Badge variant="standard" color="error" badgeContent={5}>
-                  <IconButton  >
+                  <IconButton>
                     <IoNotificationsOutline></IoNotificationsOutline>
                   </IconButton>
-
                 </Badge>
 
-
                 <Tooltip title="Open settings">
-                  <Box display={'flex'} alignItems={'center'} gap="10px">
-
+                  <Box display={"flex"} alignItems={"center"} gap="10px">
                     <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                       <Avatar alt="Remy Sharp" src="/user.jpg" />
                     </IconButton>
-                    <Box sx={{
-                      display: {
-                        xs: 'none',
-                        md: 'flex'
-                      },
-                      flexDirection: 'column'
-                    }}>
+                    <Box
+                      sx={{
+                        display: {
+                          xs: "none",
+                          md: "flex",
+                        },
+                        flexDirection: "column",
+                      }}
+                    >
                       <Typography>User Name</Typography>
-                      <Typography fontSize={10} color='GrayText' >Admin</Typography>
+                      <Typography fontSize={10} color="GrayText">
+                        Admin
+                      </Typography>
                     </Box>
-
-
                   </Box>
-
                 </Tooltip>
-
-
-
+                <LocaleSelect></LocaleSelect>
               </Box>
-
-
             </Box>
-
-
           </Box>
         </Paper>
-
       </AppBar>
-
     </HideOnScroll>
   );
 }
