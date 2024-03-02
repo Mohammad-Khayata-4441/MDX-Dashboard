@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './app/index.tsx'
+import App from './app/app.tsx'
 import "@fontsource/almarai"
 import "@fontsource/poppins"
 import '@/styles/_global_imports.scss'

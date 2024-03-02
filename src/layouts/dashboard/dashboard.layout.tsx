@@ -8,6 +8,8 @@ import DashboardNavLinks from "./components/DashboardNavLinks";
 import { CssBaseline, Typography } from "@mui/material";
 import Navbar from "./components/Navbar";
 import { BsChevronCompactLeft } from 'react-icons/bs'
+ import navLinks from "@/app/dashboard/dasboard.navigation";
+import { AppConfig } from "@/app.config";
 
 const drawerFullWidth = 240;
 const miniSizedDrawerWidth = 88
@@ -85,11 +87,6 @@ export default function MiniDrawer(props: DrawerProps) {
 
       <Drawer variant="permanent" open={open} drawerWidth={drawerWidth} PaperProps={{
         elevation: 0, variant: 'elevation', sx: {
-          borderTopLeftRadius: 0,
-          borderBottomLeftRadius: 0,
-          borderLeft: 'none',
-          borderTop:'none',
-          borderBottom:'none', 
           display: {
             xs: 'none',
             md: 'block'
@@ -105,11 +102,11 @@ export default function MiniDrawer(props: DrawerProps) {
             alignItems={"center"}
             px={1}
           >
-            <img width="48" src="/logo.png" />
+            <img alt="test" width="48" src="/logo.png" />
             {
               open &&
               <Typography fontSize={13} fontWeight={"bold"} variant="h2">
-                MDX Dashboard
+                {AppConfig.APP_NAME}
               </Typography>
             }
             {
@@ -128,7 +125,7 @@ export default function MiniDrawer(props: DrawerProps) {
           </Box>
         </DrawerHeader>
         <Box mt={2}>
-          <DashboardNavLinks isOpen={open} />
+          <DashboardNavLinks items={navLinks} isOpen={open} />
         </Box>
       </Drawer>
 
@@ -149,13 +146,13 @@ export default function MiniDrawer(props: DrawerProps) {
           elevation: 0
         } as any}>
         <DrawerHeader sx={{ display: 'flex', justifyContent: 'flex-start' }}>
-          <img width="48" src="/logo.png" />
+          <img alt='test' width="48" src="/logo.png" />
 
           <Typography fontSize={13} fontWeight={"bold"} variant="h2">
-            MDX Dashboard
+            {AppConfig.APP_NAME}
           </Typography>
         </DrawerHeader>
-        <DashboardNavLinks isOpen={true} />
+        <DashboardNavLinks items={navLinks} isOpen={true} />
       </MuiDrawer>
 
       <Box component="main" sx={{ flexGrow: 1, position: "relative", px: '24px', pb: 2, mb: { xs: '100px', md: 0 } }}>

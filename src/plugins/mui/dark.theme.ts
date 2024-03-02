@@ -4,11 +4,10 @@ import {sharedThemeConfig} from './sharedThemeConfig'
 export const darkTheme = createTheme({
     direction: 'ltr',
     ...sharedThemeConfig,
-
     palette: {
         mode: 'dark',
         primary: {
-            main: "#76FCFF"
+            main: "#72B6F9"
         },
         secondary: {
             main: '#F57077'

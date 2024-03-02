@@ -1,14 +1,7 @@
 import React, { Suspense } from 'react'
 import { Routes, Route } from 'react-router-dom'
-
-const Home = React.lazy(() => import('@/app/home/home.page'))
-
-import { DashboardRoutes } from './routes/dashboard.routes'
-
-
+import { DashboardRoutes } from '../app/dashboard/dashboard.routes'
 function Router() {
-
-
     return (
         <Routes>
             {DashboardRoutes.map((Page, i) => (

@@ -2,11 +2,10 @@ import { createTheme } from '@mui/material'
 import { sharedThemeConfig } from './sharedThemeConfig';
 export const lightTheme = createTheme({
     ...sharedThemeConfig,
-
     direction: 'ltr',
     palette: {
         primary: {
-            main: '#6F00FF'
+            main: '#72B6F9'
 
         },
         secondary: {
@@ -22,5 +21,4 @@ export const lightTheme = createTheme({
         },
         divider: '#eeeeee'
     },
-
 });

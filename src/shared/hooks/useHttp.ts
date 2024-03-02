@@ -1,4 +1,4 @@
-import axiosInstance from "@/config/axios/axiosInstance"
+import axiosInstance from "@/plugins/axios/axiosInstance"
 import { serialize } from 'object-to-formdata'
 import { Method, AxiosRequestConfig, AxiosResponse, AxiosError } from "axios"
 

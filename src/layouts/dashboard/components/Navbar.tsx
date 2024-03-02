@@ -4,8 +4,10 @@ import useScrollTrigger from '@mui/material/useScrollTrigger';
 import { Avatar, Badge, Box, Paper, IconButton, InputAdornment, TextField, Tooltip, Typography, Slide } from "@mui/material";
 import { IoMenu, IoMenuOutline, IoNotificationsOutline, IoSearchOutline } from "react-icons/io5";
 import { HiOutlineMoon, HiOutlineSun } from "react-icons/hi2";
-import { useDarkMode } from "usehooks-ts";
+// import { useDarkMode } from "usehooks-ts";
 import { BsChevronCompactRight, BsMenuApp } from 'react-icons/bs'
+import { useContext } from "react";
+import { ColorModeContext } from "@/app/hooks/useDarkMode";
 interface AppBarProps extends MuiAppBarProps {
   open?: boolean;
 }
@@ -23,10 +25,13 @@ export default function Navbar({
   onMobileDrawerOpen
 }: Props) {
 
-  const { toggle, isDarkMode } = useDarkMode(false);
+  // const { toggle, isDarkMode } = useDarkMode({localStorageKey:'dark_mode'});
+  const { mode, setMode } = useContext(ColorModeContext)
+  const toggle = () => {
+    setMode(mode === 'dark' ? 'light' : 'dark')
+  }
 
-
-  const handleOpenUserMenu = () => { 
+  const handleOpenUserMenu = () => {
     console.log('wtf')
   }
 
@@ -85,7 +90,7 @@ export default function Navbar({
     <HideOnScroll>
       <AppBar position="sticky" color="transparent" sx={{ p: '24px', border: 0 }} >
 
-        <Paper sx={{ p:3}}>
+        <Paper sx={{ p: 3 }}>
           <Box display={'flex'} alignItems={'center'} gap={2} justifyContent={'space-between'} width={'100%'}>
             <Box className="left" display={'flex'} gap={2} alignItems={'center'} justifyContent={'center'}>
               {
@@ -169,7 +174,7 @@ export default function Navbar({
 
                 <IconButton onClick={() => toggle()}  >
                   {
-                    isDarkMode ?
+                    mode ==='dark' ?
                       <HiOutlineSun />
                       :
                       <HiOutlineMoon />

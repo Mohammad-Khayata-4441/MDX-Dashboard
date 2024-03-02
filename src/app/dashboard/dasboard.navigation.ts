@@ -1,17 +1,12 @@
 
 import { HiOutlineHome, HiOutlineShoppingCart, HiOutlineUsers } from 'react-icons/hi2'
-import { IoExtensionPuzzleOutline, IoFolderOpenOutline, IoNotificationsOutline } from 'react-icons/io5'
+import { IoFolderOpenOutline, IoNotificationsOutline } from 'react-icons/io5'
 import { NavigationRecord } from '@/shared/types/navigation'
 const DashboardNavigation: NavigationRecord[] = [
     {
         text: "Home",
         path: "/",
         icon: HiOutlineHome
-    },
-    {
-        text: "Components",
-        path: "/components",
-        icon: IoExtensionPuzzleOutline
     },
     {
         text: "eCommerce",
@@ -31,8 +26,10 @@ const DashboardNavigation: NavigationRecord[] = [
     {
         text: "Notifications",
         path: "/notifications",
-        icon: IoNotificationsOutline
+        icon: IoNotificationsOutline,
+
     },
+
 ]
 
 

@@ -1,8 +1,7 @@
-import { IconProps } from "@mui/material";
-import { FC } from "react";
-import { IconBaseProps, IconType } from 'react-icons'
+import { IconType } from 'react-icons'
 export interface NavigationRecord {
     text: string,
     path: string,
-    icon: FC<IconBaseProps | IconProps>,
+    icon: IconType,
+    childrens?: NavigationRecord[]
 }
