@@ -1,9 +1,10 @@
 
 import { createTheme } from '@mui/material'
-import {sharedThemeConfig} from './sharedThemeConfig'
+import { sharedThemeConfig } from './sharedThemeConfig'
 export const darkTheme = createTheme({
     direction: 'ltr',
     ...sharedThemeConfig,
+
     palette: {
         mode: 'dark',
         primary: {

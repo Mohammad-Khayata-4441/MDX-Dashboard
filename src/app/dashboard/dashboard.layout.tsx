@@ -8,12 +8,12 @@ import DashboardNavLinks from "./components/layout/DashboardNavLinks";
 import { CssBaseline, Typography } from "@mui/material";
 import Navbar from "./components/layout/Navbar";
 import { BsChevronCompactLeft } from 'react-icons/bs'
- import navLinks from "@/app/dashboard/dasboard.navigation";
+import navLinks from "@/app/dashboard/dasboard.navigation";
 import { AppConfig } from "@/app.config";
 
 const drawerFullWidth = 240;
 const miniSizedDrawerWidth = 88
-
+const dashboardPaddingX = 2
 
 
 
@@ -155,7 +155,7 @@ export default function MiniDrawer(props: DrawerProps) {
         <DashboardNavLinks items={navLinks} isOpen={true} />
       </MuiDrawer>
 
-      <Box component="main" sx={{ flexGrow: 1, position: "relative", px: '24px', pb: 2, mb: { xs: '100px', md: 0 } }}>
+      <Box component="main" sx={{ flexGrow: 1, position: "relative", pb: 2, mb: { xs: '100px', md: 0 } , px:dashboardPaddingX}}>
         {props.children}
       </Box>
       {/* <BottomNavigation /> */}

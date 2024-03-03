@@ -5,6 +5,7 @@ import ColorModeProvider from './ColorModeProvider'
 import MuiThemeProvider from './MuiThemeProvider'
 import { I18nextProvider } from 'react-i18next'
 import i18n from '@/plugins/i18n'
+import FeedBackProvider, { ConfirmContext } from './FeedBackProvider'
 
 export default function AppProviders(props: PropsWithChildren) {
     return (
@@ -14,7 +15,9 @@ export default function AppProviders(props: PropsWithChildren) {
                 <I18nextProvider i18n={i18n}>
                     <ColorModeProvider>
                         <MuiThemeProvider>
-                            {props.children}
+                            <FeedBackProvider>
+                                {props.children}
+                            </FeedBackProvider>
                         </MuiThemeProvider>
                     </ColorModeProvider>
                 </I18nextProvider>

@@ -6,8 +6,8 @@ interface Props {
 }
 export default function Page({ title, actions, children }: PropsWithChildren<Props>) {
     return (
-        <div>
-            <Box display={'flex'} justifyContent={'space-between'}  alignItems={'center'}>
+        <>
+            <Box display={'flex'} py={2} justifyContent={'space-between'} alignItems={'center'}>
 
                 <div className="navigation">
                     <Typography fontSize={'24px'} fontWeight={'bold'} variant='h1'>
@@ -17,16 +17,16 @@ export default function Page({ title, actions, children }: PropsWithChildren<Pro
 
 
                 <div className="actions">
-                    {actions ? actions : <></>}
+                    {actions ? actions : null}
                 </div>
 
 
             </Box>
-                <Box mt={2}>
+            <Box >
 
                 {children}
-                </Box>
-                
-        </div>
+            </Box>
+
+        </>
     )
 }

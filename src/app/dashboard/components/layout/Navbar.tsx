@@ -100,9 +100,9 @@ export default function Navbar({
       <AppBar
         position="sticky"
         color="transparent"
-        sx={{ p: "24px", border: 0 }}
+        sx={{borderLeft:0,borderTop:0}}
       >
-        <Paper sx={{ p: 3 }}>
+        <Paper sx={{ p:2 , borderRadius:0, border:0 }}>
           <Box
             display={"flex"}
             alignItems={"center"}
