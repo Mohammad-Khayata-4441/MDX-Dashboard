@@ -74,7 +74,7 @@ export const DashboardNavLink = ({ item, isOpen, listItemProps }: { item: Naviga
         }}
       </NavLink>
       {
-        item.childrens && open && <DashboardNavLinks listProps={{ sx: { py: 0 } }} listItemProps={{ sx: { px: 0, pl: 0.5 } }} isOpen={isOpen} items={item.childrens}></DashboardNavLinks>
+        item.childrens && isOpen && open && <DashboardNavLinks listProps={{ sx: { py: 0 } }} listItemProps={{ sx: { px: 0, pl: 0.5 } }} isOpen={isOpen} items={item.childrens}></DashboardNavLinks>
       }
     </ListItem>
 
